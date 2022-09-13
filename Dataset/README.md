@@ -1,4 +1,10 @@
-Description of dataset
+Sba_Fr Dataset is an ongoing project to collect, clean and store bitext data of Ngambay and French 
+sentences for machine translation from Ngambay to French. Ngambay is an 
+African-indigenous language spoken mostly in Tchad, a small part of Nigeria and the North of Cameroon 
+by about more than 3 millions people. The training data is most important to have machine learning models 
+with great performance, the aim of this project is to compile the largest set of training corpora for 
+the research and design of translation and NLP models involving Ngambay. 
+
 
 MIT License
 
