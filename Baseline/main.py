@@ -7,9 +7,9 @@ from transformers import EarlyStoppingCallback, IntervalStrategy
 args_dict = {
     "output_dir": "m2m100_small_fr_sba",
     "model_name_or_path": "facebook/m2m100_418M",
-    "train_file": "/home/jupyter/Ngambay-French-Neural-Machine-Translation-sba_fr_v1-/Dataset/sba_fr_JSON/sba_fr_train.json",
-    "validation_file": "/home/jupyter/Ngambay-French-Neural-Machine-Translation-sba_fr_v1-/Dataset/sba_fr_JSON/sba_fr_val.json",
-    "test_file": "/home/jupyter/Ngambay-French-Neural-Machine-Translation-sba_fr_v1-/Dataset/sba_fr_JSON/sba_fr_test.json",
+    "train_file": "/home/jupyter/Ngambay-French-Neural-Machine-Translation-sba_fr_v1-/Dataset/sba_fr_JSON/sba_fr_train_synthetic.json",
+    "validation_file": "/home/jupyter/Ngambay-French-Neural-Machine-Translation-sba_fr_v1-/Dataset/sba_fr_JSON/sba_fr_val_synthetic.json",
+    "test_file": "/home/jupyter/Ngambay-French-Neural-Machine-Translation-sba_fr_v1-/Dataset/sba_fr_JSON/sba_fr_test_synthetic.json",
     "source_lang": "fr",
     "target_lang": "sw",
     
