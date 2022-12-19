@@ -3,6 +3,7 @@ import os
 import sys
 from dataclasses import dataclass, field
 from typing import Optional
+from transformers import EarlyStoppingCallback, IntervalStrategy
 
 import datasets
 import numpy as np
@@ -328,6 +329,7 @@ def start_training(model_args, data_args, training_args):
         tokenizer=tokenizer,
         data_collator=data_collator,
         compute_metrics=compute_metrics if training_args.predict_with_generate else None,
+        callbacks = [EarlyStoppingCallback(early_stopping_patience=6)],
     )
 
     # Training
