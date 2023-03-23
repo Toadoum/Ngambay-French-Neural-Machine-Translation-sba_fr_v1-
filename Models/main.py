@@ -2,14 +2,15 @@ from training import *
 from training_arg import*
 import transformers
 from transformers import M2M100Tokenizer, M2M100ForConditionalGeneration
-from transformers import EarlyStoppingCallback, IntervalStrategy
+from transformers import T5ForConditionalGeneration, AutoTokenizer
+#from transformers import EarlyStoppingCallback, IntervalStrategy
 
 args_dict = {
-    "output_dir": "m2m100_small_fr_sba",
-    "model_name_or_path": "facebook/m2m100_418M",
-    "train_file": "/home/jupyter/Ngambay-French-Neural-Machine-Translation-sba_fr_v1-/Dataset/sba_fr_JSON/sba_fr_train_synthetic.json",
-    "validation_file": "/home/jupyter/Ngambay-French-Neural-Machine-Translation-sba_fr_v1-/Dataset/sba_fr_JSON/sba_fr_val_synthetic.json",
-    "test_file": "/home/jupyter/Ngambay-French-Neural-Machine-Translation-sba_fr_v1-/Dataset/sba_fr_JSON/sba_fr_test_synthetic.json",
+    "output_dir": "byt5_small_fr_sba_synth",
+    "model_name_or_path": "google/byt5-small",
+    "train_file": "/home/jupyter/Ngambay-French-Neural-Machine-Translation-sba_fr_v1-/Dataset/sba_fr_train_sy.json",
+    "validation_file": "/home/jupyter/Ngambay-French-Neural-Machine-Translation-sba_fr_v1-/Dataset/sba_fr_val_sy.json",
+    "test_file": "/home/jupyter/Ngambay-French-Neural-Machine-Translation-sba_fr_v1-/Dataset/sba_fr_test_sy.json",
     "source_lang": "fr",
     "target_lang": "sw",
     
@@ -22,10 +23,7 @@ args_dict = {
     "num_beams": "5",
     "save_steps": "10000",
     "seed": "65",
-    "evaluation_strategy" :"steps",
-    "load_best_model_at_end":"True",
-    "eval_steps" : "50",
-    "metric_for_best_model" :"bleu",
+    
 
     "do_train": "True",
     "do_eval": "True",
@@ -38,7 +36,7 @@ args_dict = {
     # for mt5
     # "source_prefix": "translate Frecnh to Wolof: ",
     # for m2m100
-    "forced_bos_token": "sw",
+    #"forced_bos_token": "sw",
     # for mBART50
     #"forced_bos_token": "en_XX", # language code has _[country code]
 
@@ -50,5 +48,5 @@ start_training(model_args, data_args, training_args)
 
 #Prediction function
 
-model = M2M100ForConditionalGeneration.from_pretrained("/home/jupyter/Ngambay-French-Neural-Machine-Translation-sba_fr_v1-/Baseline/m2m100_small_fr_sba")
-tokenizer = M2M100Tokenizer.from_pretrained("/home/jupyter/Ngambay-French-Neural-Machine-Translation-sba_fr_v1-/Baseline/m2m100_small_fr_sba")
+model = T5ForConditionalGeneration.from_pretrained("/home/jupyter/Ngambay-French-Neural-Machine-Translation-sba_fr_v1-/Baseline/byt5_small_fr_sba_sy")
+tokenizer = AutoTokenizer.from_pretrained("/home/jupyter/Ngambay-French-Neural-Machine-Translation-sba_fr_v1-/Baseline/byt5_small_fr_sba_sy")

@@ -329,7 +329,6 @@ def start_training(model_args, data_args, training_args):
         tokenizer=tokenizer,
         data_collator=data_collator,
         compute_metrics=compute_metrics if training_args.predict_with_generate else None,
-        callbacks = [EarlyStoppingCallback(early_stopping_patience=7)],
     )
 
     # Training

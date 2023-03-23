@@ -34,10 +34,6 @@ MULTILINGUAL_TOKENIZERS = [MBartTokenizer, MBartTokenizerFast, MBart50Tokenizer,
 
 
 
-
-
-
-
 def start_training(model_args, data_args, training_args):
     # See all possible arguments in src/transformers/training_args.py
     # or by passing the --help flag to this script.
@@ -329,7 +325,6 @@ def start_training(model_args, data_args, training_args):
         tokenizer=tokenizer,
         data_collator=data_collator,
         compute_metrics=compute_metrics if training_args.predict_with_generate else None,
-        callbacks = [EarlyStoppingCallback(early_stopping_patience=7)],
     )
 
     # Training
