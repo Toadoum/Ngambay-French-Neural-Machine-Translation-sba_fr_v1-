@@ -3,7 +3,7 @@ import os
 import sys
 from dataclasses import dataclass, field
 from typing import Optional
-from transformers import EarlyStoppingCallback, IntervalStrategy
+
 
 import datasets
 import numpy as np
@@ -31,10 +31,6 @@ from transformers.trainer_utils import get_last_checkpoint
 logger = logging.getLogger(__name__)
 
 MULTILINGUAL_TOKENIZERS = [MBartTokenizer, MBartTokenizerFast, MBart50Tokenizer, MBart50TokenizerFast, M2M100Tokenizer]
-
-
-
-
 
 
 

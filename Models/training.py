@@ -3,7 +3,7 @@ import os
 import sys
 from dataclasses import dataclass, field
 from typing import Optional
-from transformers import EarlyStoppingCallback, IntervalStrategy
+
 
 import datasets
 import numpy as np

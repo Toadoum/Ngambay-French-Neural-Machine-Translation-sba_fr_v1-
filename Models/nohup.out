@@ -1,246 +1,0 @@
-['--output_dir', 'byt5_small_fr_sba_synth', '--model_name_or_path', 'google/byt5-small', '--train_file', '/home/jupyter/Ngambay-French-Neural-Machine-Translation-sba_fr_v1-/Dataset/sba_fr_train_sy.json', '--validation_file', '/home/jupyter/Ngambay-French-Neural-Machine-Translation-sba_fr_v1-/Dataset/sba_fr_val_sy.json', '--test_file', '/home/jupyter/Ngambay-French-Neural-Machine-Translation-sba_fr_v1-/Dataset/sba_fr_test_sy.json', '--source_lang', 'fr', '--target_lang', 'sw', '--max_source_length', '128', '--max_target_length', '128', '--num_train_epochs', '60', '--per_device_train_batch_size', '5', '--per_device_eval_batch_size', '5', '--num_beams', '5', '--save_steps', '10000', '--seed', '65', '--do_train', 'True', '--do_eval', 'True', '--do_predict', 'True', '--predict_with_generate', 'True', '--overwrite_output_dir', 'True']
-03/23/2023 19:09:20 - WARNING - training - Process rank: -1, device: cpu, n_gpu: 0distributed training: False, 16-bits training: False
-03/23/2023 19:09:20 - INFO - training - Training/evaluation parameters Seq2SeqTrainingArguments(
-_n_gpu=0,
-adafactor=False,
-adam_beta1=0.9,
-adam_beta2=0.999,
-adam_epsilon=1e-08,
-auto_find_batch_size=False,
-bf16=False,
-bf16_full_eval=False,
-data_seed=None,
-dataloader_drop_last=False,
-dataloader_num_workers=0,
-dataloader_pin_memory=True,
-ddp_bucket_cap_mb=None,
-ddp_find_unused_parameters=None,
-ddp_timeout=1800,
-debug=[],
-deepspeed=None,
-disable_tqdm=False,
-do_eval=True,
-do_predict=True,
-do_train=True,
-eval_accumulation_steps=None,
-eval_delay=0,
-eval_steps=None,
-evaluation_strategy=no,
-fp16=False,
-fp16_backend=auto,
-fp16_full_eval=False,
-fp16_opt_level=O1,
-fsdp=[],
-fsdp_min_num_params=0,
-fsdp_transformer_layer_cls_to_wrap=None,
-full_determinism=False,
-generation_max_length=None,
-generation_num_beams=None,
-gradient_accumulation_steps=1,
-gradient_checkpointing=False,
-greater_is_better=None,
-group_by_length=False,
-half_precision_backend=auto,
-hub_model_id=None,
-hub_private_repo=False,
-hub_strategy=every_save,
-hub_token=<HUB_TOKEN>,
-ignore_data_skip=False,
-include_inputs_for_metrics=False,
-jit_mode_eval=False,
-label_names=None,
-label_smoothing_factor=0.0,
-learning_rate=5e-05,
-length_column_name=length,
-load_best_model_at_end=False,
-local_rank=-1,
-log_level=passive,
-log_level_replica=passive,
-log_on_each_node=True,
-logging_dir=byt5_small_fr_sba_synth/runs/Mar23_19-09-20_newprojectmt,
-logging_first_step=False,
-logging_nan_inf_filter=True,
-logging_steps=500,
-logging_strategy=steps,
-lr_scheduler_type=linear,
-max_grad_norm=1.0,
-max_steps=-1,
-metric_for_best_model=None,
-mp_parameters=,
-no_cuda=False,
-num_train_epochs=60.0,
-optim=adamw_hf,
-output_dir=byt5_small_fr_sba_synth,
-overwrite_output_dir=True,
-past_index=-1,
-per_device_eval_batch_size=5,
-per_device_train_batch_size=5,
-predict_with_generate=True,
-prediction_loss_only=False,
-push_to_hub=False,
-push_to_hub_model_id=None,
-push_to_hub_organization=None,
-push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
-ray_scope=last,
-remove_unused_columns=True,
-report_to=['tensorboard'],
-resume_from_checkpoint=None,
-run_name=byt5_small_fr_sba_synth,
-save_on_each_node=False,
-save_steps=10000,
-save_strategy=steps,
-save_total_limit=None,
-seed=65,
-sharded_ddp=[],
-skip_memory_metrics=True,
-sortish_sampler=False,
-tf32=None,
-torchdynamo=None,
-tpu_metrics_debug=False,
-tpu_num_cores=None,
-use_ipex=False,
-use_legacy_prediction_loop=False,
-use_mps_device=False,
-warmup_ratio=0.0,
-warmup_steps=0,
-weight_decay=0.0,
-xpu_backend=None,
-)
-03/23/2023 19:09:20 - INFO - datasets.builder - Using custom data configuration default-754f59855cfc0482
-03/23/2023 19:09:20 - INFO - datasets.info - Loading Dataset Infos from /home/jupyter/datasets/src/datasets/packaged_modules/json
-03/23/2023 19:09:20 - INFO - datasets.builder - Generating dataset json (/home/jupyter/.cache/huggingface/datasets/json/default-754f59855cfc0482/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
-Downloading and preparing dataset json/default to /home/jupyter/.cache/huggingface/datasets/json/default-754f59855cfc0482/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e...
-Downloading data files:   0%|          | 0/3 [00:00<?, ?it/s]Downloading data files: 100%|██████████| 3/3 [00:00<00:00, 9815.06it/s]03/23/2023 19:09:20 - INFO - datasets.download.download_manager - Downloading took 0.0 min
-
-03/23/2023 19:09:20 - INFO - datasets.download.download_manager - Checksum Computation took 0.0 min
-Extracting data files:   0%|          | 0/3 [00:00<?, ?it/s]Extracting data files: 100%|██████████| 3/3 [00:00<00:00, 185.49it/s]03/23/2023 19:09:20 - INFO - datasets.builder - Generating train split
-
-Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 24366 examples [00:00, 171434.44 examples/s]                                                                    03/23/2023 19:09:21 - INFO - datasets.builder - Generating validation split
-Generating validation split: 0 examples [00:00, ? examples/s]                                                             03/23/2023 19:09:21 - INFO - datasets.builder - Generating test split
-Generating test split: 0 examples [00:00, ? examples/s]                                                       03/23/2023 19:09:21 - INFO - datasets.utils.info_utils - Unable to verify splits sizes.
-Dataset json downloaded and prepared to /home/jupyter/.cache/huggingface/datasets/json/default-754f59855cfc0482/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e. Subsequent calls will reuse this data.
-  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 638.05it/s]
-[INFO|configuration_utils.py:653] 2023-03-23 19:09:21,521 >> loading configuration file config.json from cache at /home/jupyter/.cache/huggingface/hub/models--google--byt5-small/snapshots/68377bdc18a2ffec8a0533fef03b1c513a4dd49d/config.json
-[INFO|configuration_utils.py:705] 2023-03-23 19:09:21,522 >> Model config T5Config {
-  "_name_or_path": "google/byt5-small",
-  "architectures": [
-    "T5ForConditionalGeneration"
-  ],
-  "d_ff": 3584,
-  "d_kv": 64,
-  "d_model": 1472,
-  "decoder_start_token_id": 0,
-  "dense_act_fn": "gelu_new",
-  "dropout_rate": 0.1,
-  "eos_token_id": 1,
-  "feed_forward_proj": "gated-gelu",
-  "gradient_checkpointing": false,
-  "initializer_factor": 1.0,
-  "is_encoder_decoder": true,
-  "is_gated_act": true,
-  "layer_norm_epsilon": 1e-06,
-  "model_type": "t5",
-  "num_decoder_layers": 4,
-  "num_heads": 6,
-  "num_layers": 12,
-  "pad_token_id": 0,
-  "relative_attention_max_distance": 128,
-  "relative_attention_num_buckets": 32,
-  "tie_word_embeddings": false,
-  "tokenizer_class": "ByT5Tokenizer",
-  "transformers_version": "4.24.0.dev0",
-  "use_cache": true,
-  "vocab_size": 384
-}
-
-[INFO|configuration_utils.py:653] 2023-03-23 19:09:21,859 >> loading configuration file config.json from cache at /home/jupyter/.cache/huggingface/hub/models--google--byt5-small/snapshots/68377bdc18a2ffec8a0533fef03b1c513a4dd49d/config.json
-[INFO|configuration_utils.py:705] 2023-03-23 19:09:21,860 >> Model config T5Config {
-  "_name_or_path": "google/byt5-small",
-  "architectures": [
-    "T5ForConditionalGeneration"
-  ],
-  "d_ff": 3584,
-  "d_kv": 64,
-  "d_model": 1472,
-  "decoder_start_token_id": 0,
-  "dense_act_fn": "gelu_new",
-  "dropout_rate": 0.1,
-  "eos_token_id": 1,
-  "feed_forward_proj": "gated-gelu",
-  "gradient_checkpointing": false,
-  "initializer_factor": 1.0,
-  "is_encoder_decoder": true,
-  "is_gated_act": true,
-  "layer_norm_epsilon": 1e-06,
-  "model_type": "t5",
-  "num_decoder_layers": 4,
-  "num_heads": 6,
-  "num_layers": 12,
-  "pad_token_id": 0,
-  "relative_attention_max_distance": 128,
-  "relative_attention_num_buckets": 32,
-  "tie_word_embeddings": false,
-  "tokenizer_class": "ByT5Tokenizer",
-  "transformers_version": "4.24.0.dev0",
-  "use_cache": true,
-  "vocab_size": 384
-}
-
-[INFO|tokenization_utils_base.py:1776] 2023-03-23 19:09:21,862 >> loading file added_tokens.json from cache at None
-[INFO|tokenization_utils_base.py:1776] 2023-03-23 19:09:21,862 >> loading file special_tokens_map.json from cache at /home/jupyter/.cache/huggingface/hub/models--google--byt5-small/snapshots/68377bdc18a2ffec8a0533fef03b1c513a4dd49d/special_tokens_map.json
-[INFO|tokenization_utils_base.py:1776] 2023-03-23 19:09:21,862 >> loading file tokenizer_config.json from cache at /home/jupyter/.cache/huggingface/hub/models--google--byt5-small/snapshots/68377bdc18a2ffec8a0533fef03b1c513a4dd49d/tokenizer_config.json
-[INFO|configuration_utils.py:653] 2023-03-23 19:09:21,862 >> loading configuration file config.json from cache at /home/jupyter/.cache/huggingface/hub/models--google--byt5-small/snapshots/68377bdc18a2ffec8a0533fef03b1c513a4dd49d/config.json
-[INFO|configuration_utils.py:705] 2023-03-23 19:09:21,863 >> Model config T5Config {
-  "_name_or_path": "google/byt5-small",
-  "architectures": [
-    "T5ForConditionalGeneration"
-  ],
-  "d_ff": 3584,
-  "d_kv": 64,
-  "d_model": 1472,
-  "decoder_start_token_id": 0,
-  "dense_act_fn": "gelu_new",
-  "dropout_rate": 0.1,
-  "eos_token_id": 1,
-  "feed_forward_proj": "gated-gelu",
-  "gradient_checkpointing": false,
-  "initializer_factor": 1.0,
-  "is_encoder_decoder": true,
-  "is_gated_act": true,
-  "layer_norm_epsilon": 1e-06,
-  "model_type": "t5",
-  "num_decoder_layers": 4,
-  "num_heads": 6,
-  "num_layers": 12,
-  "pad_token_id": 0,
-  "relative_attention_max_distance": 128,
-  "relative_attention_num_buckets": 32,
-  "tie_word_embeddings": false,
-  "tokenizer_class": "ByT5Tokenizer",
-  "transformers_version": "4.24.0.dev0",
-  "use_cache": true,
-  "vocab_size": 384
-}
-
-[INFO|modeling_utils.py:2156] 2023-03-23 19:09:21,892 >> loading weights file pytorch_model.bin from cache at /home/jupyter/.cache/huggingface/hub/models--google--byt5-small/snapshots/68377bdc18a2ffec8a0533fef03b1c513a4dd49d/pytorch_model.bin
-[INFO|modeling_utils.py:2606] 2023-03-23 19:09:27,065 >> All model checkpoint weights were used when initializing T5ForConditionalGeneration.
-
-[INFO|modeling_utils.py:2615] 2023-03-23 19:09:27,066 >> All the weights of T5ForConditionalGeneration were initialized from the model checkpoint at google/byt5-small.
-If your task is similar to the task the model of the checkpoint was trained on, you can already use T5ForConditionalGeneration for predictions without further training.
-Running tokenizer on train dataset:   0%|          | 0/24366 [00:00<?, ? examples/s]03/23/2023 19:09:27 - INFO - datasets.arrow_dataset - Caching processed dataset at /home/jupyter/.cache/huggingface/datasets/json/default-754f59855cfc0482/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-f3ac9dc1a4886d9f.arrow
-/home/jupyter/Ngambay-French-Neural-Machine-Translation-sba_fr_v1-/Models/transformers/src/transformers/tokenization_utils_base.py:3546: UserWarning: `as_target_tokenizer` is deprecated and will be removed in v5 of Transformers. You can tokenize your labels by using the argument `text_target` of the regular `__call__` method (either in the same call as your input texts if you use the same keyword arguments, or in a separate call.
-  "`as_target_tokenizer` is deprecated and will be removed in v5 of Transformers. You can tokenize your "
-Running tokenizer on train dataset:   4%|▍         | 1000/24366 [00:00<00:17, 1306.77 examples/s]Running tokenizer on train dataset:   8%|▊         | 2000/24366 [00:01<00:17, 1262.74 examples/s]Running tokenizer on train dataset:  12%|█▏        | 3000/24366 [00:02<00:15, 1404.98 examples/s]Running tokenizer on train dataset:  16%|█▋        | 4000/24366 [00:02<00:13, 1518.54 examples/s]Running tokenizer on train dataset:  21%|██        | 5000/24366 [00:03<00:12, 1590.68 examples/s]Running tokenizer on train dataset:  25%|██▍       | 6000/24366 [00:03<00:11, 1661.77 examples/s]Running tokenizer on train dataset:  29%|██▊       | 7000/24366 [00:04<00:11, 1526.03 examples/s]Running tokenizer on train dataset:  33%|███▎      | 8000/24366 [00:05<00:11, 1424.34 examples/s]Running tokenizer on train dataset:  37%|███▋      | 9000/24366 [00:06<00:10, 1512.21 examples/s]Running tokenizer on train dataset:  41%|████      | 10000/24366 [00:06<00:09, 1536.32 examples/s]Running tokenizer on train dataset:  45%|████▌     | 11000/24366 [00:07<00:08, 1530.03 examples/s]Running tokenizer on train dataset:  49%|████▉     | 12000/24366 [00:07<00:07, 1577.39 examples/s]Running tokenizer on train dataset:  53%|█████▎    | 13000/24366 [00:08<00:07, 1511.88 examples/s]Running tokenizer on train dataset:  57%|█████▋    | 14000/24366 [00:09<00:07, 1439.03 examples/s]Running tokenizer on train dataset:  62%|██████▏   | 15000/24366 [00:10<00:06, 1376.16 examples/s]Running tokenizer on train dataset:  66%|██████▌   | 16000/24366 [00:10<00:05, 1472.84 examples/s]Running tokenizer on train dataset:  70%|██████▉   | 17000/24366 [00:11<00:04, 1533.02 examples/s]Running tokenizer on train dataset:  74%|███████▍  | 18000/24366 [00:11<00:04, 1567.13 examples/s]Running tokenizer on train dataset:  78%|███████▊  | 19000/24366 [00:12<00:03, 1487.23 examples/s]Running tokenizer on train dataset:  82%|████████▏ | 20000/24366 [00:13<00:03, 1389.61 examples/s]Running tokenizer on train dataset:  86%|████████▌ | 21000/24366 [00:14<00:02, 1407.30 examples/s]Running tokenizer on train dataset:  90%|█████████ | 22000/24366 [00:14<00:01, 1421.23 examples/s]Running tokenizer on train dataset:  94%|█████████▍| 23000/24366 [00:15<00:00, 1381.74 examples/s]Running tokenizer on train dataset:  98%|█████████▊| 24000/24366 [00:16<00:00, 1401.87 examples/s]Running tokenizer on train dataset: 100%|██████████| 24366/24366 [00:16<00:00, 1445.87 examples/s]                                                                                                  Running tokenizer on validation dataset:   0%|          | 0/7615 [00:00<?, ? examples/s]03/23/2023 19:09:44 - INFO - datasets.arrow_dataset - Caching processed dataset at /home/jupyter/.cache/huggingface/datasets/json/default-754f59855cfc0482/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-48963f6d8503e317.arrow
-Running tokenizer on validation dataset:  13%|█▎        | 1000/7615 [00:00<00:03, 1757.98 examples/s]Running tokenizer on validation dataset:  26%|██▋       | 2000/7615 [00:01<00:03, 1509.98 examples/s]Running tokenizer on validation dataset:  39%|███▉      | 3000/7615 [00:01<00:02, 1564.99 examples/s]Running tokenizer on validation dataset:  53%|█████▎    | 4000/7615 [00:02<00:02, 1606.04 examples/s]Running tokenizer on validation dataset:  66%|██████▌   | 5000/7615 [00:03<00:01, 1463.83 examples/s]Running tokenizer on validation dataset:  79%|███████▉  | 6000/7615 [00:04<00:01, 1390.40 examples/s]Running tokenizer on validation dataset:  92%|█████████▏| 7000/7615 [00:04<00:00, 1329.73 examples/s]Running tokenizer on validation dataset: 100%|██████████| 7615/7615 [00:05<00:00, 1333.69 examples/s]                                                                                                     Running tokenizer on prediction dataset:   0%|          | 0/6092 [00:00<?, ? examples/s]03/23/2023 19:09:49 - INFO - datasets.arrow_dataset - Caching processed dataset at /home/jupyter/.cache/huggingface/datasets/json/default-754f59855cfc0482/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-5f250a7880f27843.arrow
-Running tokenizer on prediction dataset:  16%|█▋        | 1000/6092 [00:00<00:03, 1630.42 examples/s]Running tokenizer on prediction dataset:  33%|███▎      | 2000/6092 [00:01<00:02, 1702.96 examples/s]Running tokenizer on prediction dataset:  49%|████▉     | 3000/6092 [00:01<00:02, 1483.81 examples/s]Running tokenizer on prediction dataset:  66%|██████▌   | 4000/6092 [00:02<00:01, 1435.51 examples/s]Running tokenizer on prediction dataset:  82%|████████▏ | 5000/6092 [00:03<00:00, 1493.99 examples/s]Running tokenizer on prediction dataset:  98%|█████████▊| 6000/6092 [00:03<00:00, 1559.32 examples/s]                                                                                                     /home/jupyter/Ngambay-French-Neural-Machine-Translation-sba_fr_v1-/Models/training.py:290: FutureWarning: load_metric is deprecated and will be removed in the next major version of datasets. Use 'evaluate.load' instead, from the new library 🤗 Evaluate: https://huggingface.co/docs/evaluate
-  metric = load_metric("sacrebleu")
-/home/jupyter/Ngambay-French-Neural-Machine-Translation-sba_fr_v1-/Models/transformers/src/transformers/optimization.py:310: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
-  FutureWarning,
-[INFO|trainer.py:1607] 2023-03-23 19:09:54,260 >> ***** Running training *****
-[INFO|trainer.py:1608] 2023-03-23 19:09:54,260 >>   Num examples = 24366
-[INFO|trainer.py:1609] 2023-03-23 19:09:54,260 >>   Num Epochs = 60
-[INFO|trainer.py:1610] 2023-03-23 19:09:54,261 >>   Instantaneous batch size per device = 5
-[INFO|trainer.py:1611] 2023-03-23 19:09:54,261 >>   Total train batch size (w. parallel, distributed & accumulation) = 5
-[INFO|trainer.py:1612] 2023-03-23 19:09:54,261 >>   Gradient Accumulation steps = 1
-[INFO|trainer.py:1613] 2023-03-23 19:09:54,261 >>   Total optimization steps = 292440
-  0%|          | 0/292440 [00:00<?, ?it/s]
